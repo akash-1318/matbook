@@ -23,14 +23,11 @@ export const SkillsChipsField: React.FC<{
 
     const lower = trimmed.toLowerCase();
 
-    // only allow skills that exist in the schema options
     const match = options.find(
       (opt) =>
         opt.value.toLowerCase() === lower || opt.label.toLowerCase() === lower
     );
     if (!match) {
-      // you can replace this with something fancier if you like
-      // for now just ignore invalid skill names
       return;
     }
 
