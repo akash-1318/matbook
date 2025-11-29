@@ -44,6 +44,15 @@ const FormPage: React.FC = () => {
         <p className="mt-1 text-sm text-slate-600">{schema.description}</p>
       )}
 
+      {message && (
+        <p
+          className="mt-2 text-xs text-slate-600 bg-green-100 p-1.5 rounded-[5px]"
+          role="status"
+        >
+          {message}
+        </p>
+      )}
+
       <div className="mt-4">
         <DynamicForm
           schema={schema}
@@ -51,12 +60,6 @@ const FormPage: React.FC = () => {
           isSubmitting={createMutation.isPending}
         />
       </div>
-
-      {message && (
-        <p className="mt-2 text-xs text-slate-600" role="status">
-          {message}
-        </p>
-      )}
     </div>
   );
 };

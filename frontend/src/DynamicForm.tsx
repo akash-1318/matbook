@@ -71,11 +71,14 @@ function validateFieldValue(
     }
     case "multi-select": {
       if (!Array.isArray(rawValue)) return "Must be an array.";
-      const allowed = options.map((o) => o.value);
-      if (allowed.length) {
-        const invalid = rawValue.some((v) => !allowed.includes(String(v)));
-        if (invalid) return "Contains invalid option(s).";
+      if (field.name !== "skills") {
+        const allowed = options.map((o) => o.value);
+        if (allowed.length) {
+          const invalid = rawValue.some((v) => !allowed.includes(String(v)));
+          if (invalid) return "Contains invalid option(s).";
+        }
       }
+
       if (validation.minSelected && rawValue.length < validation.minSelected) {
         return `Select at least ${validation.minSelected} option(s).`;
       }

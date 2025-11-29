@@ -21,19 +21,14 @@ export const SkillsChipsField: React.FC<{
     const trimmed = raw.trim();
     if (!trimmed) return;
 
-    const lower = trimmed.toLowerCase();
+    const normalized = trimmed.replace(/\s+/g, " ");
 
-    const match = options.find(
-      (opt) =>
-        opt.value.toLowerCase() === lower || opt.label.toLowerCase() === lower
+    const exists = selectedValues.some(
+      (v) => v.toLowerCase() === normalized.toLowerCase()
     );
-    if (!match) {
-      return;
-    }
+    if (exists) return;
 
-    if (selectedValues.includes(match.value)) return;
-
-    fieldApi.handleChange([...selectedValues, match.value]);
+    fieldApi.handleChange([...selectedValues, normalized]);
   };
 
   const handleRemoveSkill = (value: string) => {
