@@ -5,8 +5,8 @@ import {
   useReactTable,
   type ColumnDef,
 } from "@tanstack/react-table";
-import { useDeleteSubmission, useFormSchema, useSubmissions } from "./hooks";
-import type { PaginatedSubmissions, Submission } from "./types";
+import { useDeleteSubmission, useFormSchema, useSubmissions } from "../hooks";
+import type { PaginatedSubmissions, Submission } from "../types";
 
 interface Props {
   page: number;

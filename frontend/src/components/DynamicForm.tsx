@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "@tanstack/react-form";
-import type { FormField, FormSchema, SubmissionData } from "./types";
-import { SkillsChipsField } from "./components/SkillsChipsField";
+import type { FormField, FormSchema, SubmissionData } from "../types";
+import { SkillsChipsField } from "./SkillsChipsField";
 
 interface Props {
   schema: FormSchema;

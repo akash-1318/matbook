@@ -1,5 +1,5 @@
 import React from "react";
-import type { Submission } from "./types";
+import type { Submission } from "../types";
 import SubmissionsTable from "./SubmissionsTable";
 import EditSubmissionModal from "./EditSubmissionModal";
 

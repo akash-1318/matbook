@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import FormTab from "./FormTab";
-import SubmissionsTab from "./SubmissionsTab";
+import FormTab from "./components/FormTab";
+import SubmissionsTab from "./components/SubmissionsTab";
 
 type Tab = "form" | "submissions";
 

@@ -1,7 +1,7 @@
 import React from "react";
-import { useCreateSubmission, useFormSchema } from "./hooks";
+import { useCreateSubmission, useFormSchema } from "../hooks";
 import DynamicForm from "./DynamicForm";
-import type { SubmissionData } from "./types";
+import type { SubmissionData } from "../types";
 
 const FormPage: React.FC = () => {
   const { data, isLoading, isError } = useFormSchema();
