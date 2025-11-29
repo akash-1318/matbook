@@ -44,12 +44,12 @@ export const formSchema = {
       name: "skills",
       label: "Skills",
       type: "multi-select",
-      placeholder: "Select skills",
+      placeholder: "Add skills",
       required: false,
       options: [
-        { label: "JavaScript", value: "js" },
-        { label: "React", value: "react" },
-        { label: "Node.js", value: "node" },
+        { label: "JavaScript", value: "JavaScript" },
+        { label: "React", value: "React" },
+        { label: "Node.js", value: "Node.js" },
       ],
       validation: { minSelected: 1, maxSelected: 5 },
     },
@@ -134,6 +134,7 @@ function validateField(field, rawValue) {
     case "multi-select": {
       if (!Array.isArray(rawValue)) return "Must be an array.";
 
+      // For skills we allow any free text values.
       if (field.name !== "skills") {
         const allowed = options.map((o) => o.value);
         if (allowed.length) {
