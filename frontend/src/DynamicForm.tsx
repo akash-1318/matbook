@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "@tanstack/react-form";
 import type { FormField, FormSchema, SubmissionData } from "./types";
+import { SkillsChipsField } from "./components/SkillsChipsField";
 
 interface Props {
   schema: FormSchema;
@@ -236,8 +237,12 @@ const DynamicForm: React.FC<Props> = ({
           </div>
         );
       case "multi-select": {
+        if (name === "skills") {
+          return <SkillsChipsField fieldApi={fieldApi} config={config} />;
+        }
+
         const current = Array.isArray(fieldApi.state.value)
-          ? fieldApi.state.value.map(String)
+          ? fieldApi.state.value.map((v: unknown) => String(v))
           : [];
         return (
           <div className="space-y-1" key={name}>

@@ -46,4 +46,19 @@ export interface Submission {
   createdAt: string;
 }
 
+export interface PaginatedSubmissions {
+  success: boolean;
+  data: Submission[];
+  pagination: {
+    page: number;
+    limit: number;
+    totalItems: number;
+    totalPages: number;
+  };
+  sort: {
+    sortBy: string;
+    sortOrder: "asc" | "desc";
+  };
+}
+
 export type SubmissionData = Record<string, unknown>;

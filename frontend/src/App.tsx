@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import FormPage from "./FormPage";
+import FormTab from "./FormTab";
+import SubmissionsTab from "./SubmissionsTab";
 
 type Tab = "form" | "submissions";
 
@@ -38,7 +39,7 @@ function App() {
             Submissions
           </button>
         </div>
-        {tab === "form" ? <FormPage /> : ""}
+        {tab === "form" ? <FormTab /> : <SubmissionsTab />}
       </main>
     </div>
   );
