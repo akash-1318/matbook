@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { v4 as uuid } from "uuid";
-import { formSchema, validateSubmission } from "./formSchema.js";
+import { formSchema, validateSubmission } from "./utils.js";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
